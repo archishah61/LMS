@@ -1,0 +1,9 @@
+--- Course Generation Token Logs ---
+Course Title: CSS Essentials: Styling Your Webpages Like a Pro
+Date: 2026-05-29T11:46:57.946Z
+
+[Structure Generation (Overall Course Structure)]
+Prompt Tokens: 5443
+Completion Tokens: 20225
+Total Tokens: 28205
+

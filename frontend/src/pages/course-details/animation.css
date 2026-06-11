@@ -1,0 +1,367 @@
+/* Base animations */
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  .animate-fadeOut {
+    animation: fadeOut 0.3s ease-in-out forwards;
+  }
+  
+  .animate-slideInUp {
+    animation: slideInUp 0.5s ease-out forwards;
+  }
+  
+  .animate-slideInRight {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+  
+  .animate-slideInLeft {
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+  
+  .animate-slideOutLeft {
+    animation: slideOutLeft 0.3s ease-in forwards;
+  }
+  
+  .animate-slideOutRight {
+    animation: slideOutRight 0.3s ease-in forwards;
+  }
+  
+  .animate-zoomIn {
+    animation: zoomIn 0.5s ease-out forwards;
+  }
+  
+  .animate-zoomOut {
+    animation: zoomOut 0.3s ease-in forwards;
+  }
+  
+  /* Animation keyframes */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOutLeft {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+  }
+  
+  @keyframes slideOutRight {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+  }
+  
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes zoomOut {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+  
+  /* Apply animations based on class */
+  .fadeIn {
+    animation: fadeIn 0.5s ease-in-out forwards;
+  }
+  
+  .fadeOut {
+    animation: fadeOut 0.3s ease-in-out forwards;
+  }
+  
+  .slideInRight {
+    animation: slideInRight 0.5s ease-out forwards;
+  }
+  
+  .slideInLeft {
+    animation: slideInLeft 0.5s ease-out forwards;
+  }
+  
+  .slideOutLeft {
+    animation: slideOutLeft 0.3s ease-in forwards;
+  }
+  
+  .slideOutRight {
+    animation: slideOutRight 0.3s ease-in forwards;
+  }
+  
+  .zoomIn {
+    animation: zoomIn 0.5s ease-out forwards;
+  }
+  
+  .zoomOut {
+    animation: zoomOut 0.3s ease-in forwards;
+  }
+  
+  /* Hide scrollbar but allow scrolling */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  
+  /* Pulse animation for form fields */
+  @keyframes formFieldPulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.2);
+    }
+    70% {
+      box-shadow: 0 0 0 6px rgba(99, 102, 241, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+    }
+  }
+  
+  /* Floating label animation */
+  @keyframes floatingLabel {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Shimmer effect for loading states */
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+  
+  /* Bounce animation */
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  /* Rotate animation */
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Shake animation for errors */
+  @keyframes shake {
+    0%,
+    100% {
+      transform: translateX(0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+      transform: translateX(-5px);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+      transform: translateX(5px);
+    }
+  }
+  
+  /* Success checkmark animation */
+  @keyframes checkmark {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  /* Apply animations to form elements */
+  .form-field-focus {
+    animation: formFieldPulse 1.5s infinite;
+  }
+  
+  .floating-label {
+    animation: floatingLabel 2s ease-in-out infinite;
+  }
+  
+  .loading-shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+  
+  .bounce-animation {
+    animation: bounce 1s ease infinite;
+  }
+  
+  .rotate-animation {
+    animation: rotate 2s linear infinite;
+  }
+  
+  .shake-animation {
+    animation: shake 0.5s ease-in-out;
+  }
+  
+  .checkmark-animation {
+    animation: checkmark 0.5s ease-in-out forwards;
+  }
+  
+  /* Enhanced transitions */
+  .transition-all-enhanced {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Staggered animation classes for lists */
+  .stagger-item-1 {
+    animation-delay: 0.1s;
+  }
+  .stagger-item-2 {
+    animation-delay: 0.2s;
+  }
+  .stagger-item-3 {
+    animation-delay: 0.3s;
+  }
+  .stagger-item-4 {
+    animation-delay: 0.4s;
+  }
+  .stagger-item-5 {
+    animation-delay: 0.5s;
+  }
+  
+  /* Quiz and assignment specific animations */
+  .quiz-option {
+    transition: all 0.3s ease;
+  }
+  
+  .quiz-option:hover {
+    transform: translateX(5px);
+    background-color: rgba(99, 102, 241, 0.1);
+  }
+  
+  .quiz-option.selected {
+    animation: checkmark 0.5s ease-in-out forwards;
+  }
+  
+  .assignment-field {
+    transition: all 0.3s ease;
+  }
+  
+  .assignment-field:focus {
+    animation: formFieldPulse 1.5s infinite;
+  }
+  
+  /* Sidebar specific animations */
+  .sidebar-resize-handle {
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar-resize-handle:hover {
+    background-color: rgba(99, 102, 241, 0.5);
+  }
+  
+  /* Fix for sidebar glitch */
+  .sidebar-container {
+    will-change: width;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+  
+  

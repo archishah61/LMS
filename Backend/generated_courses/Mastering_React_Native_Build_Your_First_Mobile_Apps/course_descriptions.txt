@@ -1,0 +1,7 @@
+Course Title: Mastering React Native: Build Your First Mobile Apps
+
+=== Thumbnail Description ===
+A vibrant and modern graphic illustrating a smartphone displaying a React Native app interface, surrounded by floating icons representing code, components, and mobile development tools. The background is a gradient of blue and purple, suggesting innovation and technology. The overall feel is energetic and approachable.
+
+=== Preview Video Description ===
+[0:00-0:10] Dynamic intro with React Native logo animation and upbeat music. [0:10-0:25] Quick montage of various mobile app screens built with React Native, showcasing diverse UIs and functionalities. [0:25-0:40] Overview of key learning outcomes, highlighting project-based learning and practical skills. [0:40-0:50] A friendly instructor inviting learners to join and start their mobile development journey. [0:50-0:59] Call to action with course title and enrollment prompt.

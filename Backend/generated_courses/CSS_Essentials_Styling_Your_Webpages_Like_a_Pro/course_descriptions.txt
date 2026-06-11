@@ -1,0 +1,7 @@
+Course Title: CSS Essentials: Styling Your Webpages Like a Pro
+
+=== Thumbnail Description ===
+A vibrant, modern flat design illustration showing a web browser window with colorful CSS code snippets and design elements (like styled text, boxes, and a color palette) elegantly arranged. The background features subtle geometric shapes and lines, suggesting structure and creativity. The overall impression is clean, educational, and inviting, with a focus on web design and styling.
+
+=== Preview Video Description ===
+[0:00-0:10] Dynamic intro with cool CSS animations and modern design elements. [0:10-0:25] Quick montage showcasing beautiful webpages styled with CSS, highlighting before-and-after transformations. [0:25-0:45] Overview of key topics we'll cover: selectors, box model, layouts, with engaging text overlays. [0:45-0:55] A friendly voice-over inviting you to join the course and transform your web design skills. [0:55-1:00] Course title and a clear call to action.

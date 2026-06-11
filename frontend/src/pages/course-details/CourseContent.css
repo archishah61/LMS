@@ -1,0 +1,24 @@
+/* Hide navbar in fullscreen mode */
+.navbar-hidden #course-navbar {
+    display: none;
+}
+
+.navbar-hidden [class*="top-[72px]"] {
+    top: 0 !important;
+}
+
+/* Add some transition effects */
+#course-navbar {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Style for the fullscreen button */
+.fullscreen-btn {
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.fullscreen-btn:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}

@@ -1,0 +1,7 @@
+Course Title: Flutter Essentials: Build Your First Cross-Platform Apps
+
+=== Thumbnail Description ===
+A vibrant and modern thumbnail featuring the Flutter logo prominently displayed on a smartphone screen, with abstract code snippets and UI elements floating around it. The background has a subtle gradient from light blue to purple, conveying technology and creativity. The overall impression is dynamic and inviting for new developers.
+
+=== Preview Video Description ===
+[0:00-0:10] Energetic intro showcasing exciting Flutter app animations and UIs. [0:10-0:25] Quick overview of what Flutter is and why it's powerful, with text overlays of key benefits. [0:25-0:40] Montage of course topics: glimpses of code setup, widget trees, and simple app screens being built. [0:40-0:55] A friendly instructor inviting you to join, highlighting the practical, hands-on approach. [0:55-1:00] Call to action with course title and 'Enroll Now' text.

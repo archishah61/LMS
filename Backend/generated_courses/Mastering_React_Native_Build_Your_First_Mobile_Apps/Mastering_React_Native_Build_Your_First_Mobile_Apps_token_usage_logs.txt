@@ -1,0 +1,32 @@
+--- Course Generation Token Logs ---
+Course Title: Mastering React Native: Build Your First Mobile Apps
+Date: 2026-05-29T10:12:31.126Z
+
+[Structure Generation (Overall Course Structure)]
+Prompt Tokens: 5446
+Completion Tokens: 21340
+Total Tokens: 30608
+
+
+--- Detailed Content Generation Token Logs ---
+Date: 2026-05-29T10:43:58.512Z
+
+[Module Generation: Session 3, Module 1 - "Module 3: Dynamic UIs & Screen Flow"]
+Prompt Tokens: 8510
+Completion Tokens: 13496
+Total Tokens: 25615
+
+[Module Generation: Session 2, Module 1 - "Module 2: Essential Components & Styling Techniques"]
+Prompt Tokens: 11936
+Completion Tokens: 12252
+Total Tokens: 38508
+
+[Module Generation: Session 1, Module 1 - "Module 1: Getting Started with React Native & Expo"]
+Prompt Tokens: 11360
+Completion Tokens: 12635
+Total Tokens: 39163
+
+[Module Generation: Session 1, Module 1 - "Module 1: Getting Started with React Native & Expo"]
+Prompt Tokens: 11360
+Completion Tokens: 21196
+Total Tokens: 60018

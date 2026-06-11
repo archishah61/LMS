@@ -1,0 +1,250 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Enhanced Custom Scrollbar Styling - Blue Theme */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f4f8;
+  /* Light blue-gray background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #4f46e5);
+  /* Blue-500 to Indigo-600 */
+  border-radius: 10px;
+  border: 2px solid #f0f4f8;
+  /* Creates padding around the scroll thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #4338ca);
+  /* Blue-600 to Indigo-700 */
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: gray;
+  /* Blue-500 and light blue-gray */
+}
+
+/* Apply smooth scrolling to the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Add this to your CSS file */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Learning Path Agent — hide ALL scrollbars seamlessly */
+/* Target all child elements */
+.lpa-no-scrollbar,
+.lpa-no-scrollbar * {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.lpa-no-scrollbar::-webkit-scrollbar,
+.lpa-no-scrollbar *::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* Also kill the page-level (body/html) scrollbar when LPA is mounted.
+   Uses CSS :has() — supported in all modern browsers (Chrome 105+, Firefox 121+, Safari 15.4+) */
+html:has(.lpa-no-scrollbar)::-webkit-scrollbar,
+body:has(.lpa-no-scrollbar)::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+html:has(.lpa-no-scrollbar),
+body:has(.lpa-no-scrollbar) {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+.min-h-screen {
+  table {
+    td {
+      border: 0 !important;
+    }
+  }
+}
+
+body {
+  font-family: 'Roobert';
+  font-weight: normal;
+  font-style: normal;
+}
+
+.new-font {
+  font-family: 'Space Mono' !important;
+  font-weight: bold;
+  font-style: normal !important;
+  /* font-feature-settings: 'ss01' 1, 'ss03' 1, 'ss10' 1, 'ss11' 1, 'ss12' 1; */
+}
+
+/* Animated Link Underline */
+.nav-link-animated {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: black;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-link-animated:hover::after {
+  width: 100%;
+}
+
+/* Footer Animated Link Underline (White) */
+.footer-link-animated {
+  position: relative;
+  text-decoration: none;
+}
+
+.footer-link-animated::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -3px;
+  left: 0;
+  background-color: #9ca3af;
+  /* Gray underline for dark background */
+}
+
+.container {
+  max-width: 94%;
+  margin: 0 auto;
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #00a651;
+}
+
+/* Custom Scrollbar Utility */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #e2e8f0;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #cbd5e1;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+.dark .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+
+/* Code Scrollbar Utility */
+.code-scrollbar::-webkit-scrollbar,
+.code-scrollbar *::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+  background: transparent !important;
+}
+
+.code-scrollbar::-webkit-scrollbar-track,
+.code-scrollbar *::-webkit-scrollbar-track {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.code-scrollbar::-webkit-scrollbar-thumb,
+.code-scrollbar *::-webkit-scrollbar-thumb {
+  background: #374151 !important;
+  border-radius: 8px !important;
+  border: none !important;
+}
+
+.code-scrollbar::-webkit-scrollbar-thumb:hover,
+.code-scrollbar *::-webkit-scrollbar-thumb:hover {
+  background: #4b5563 !important;
+}
+
+
+/* Blog Content Styling (Prose Replacement) */
+.blog-content h1 { font-size: 1.75rem; font-weight: 800; margin-bottom: 1.25rem; color: #111827; }
+.blog-content h2 { font-size: 1.5rem; font-weight: 700; margin-top: 1.75rem; margin-bottom: 0.75rem; color: #111827; }
+.blog-content h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.25rem; margin-bottom: 0.5rem; color: #111827; }
+.blog-content p { font-size: 1rem; margin-bottom: 1rem; line-height: 1.7; color: #374151; }
+
+@media (min-width: 768px) {
+  .blog-content h1 { font-size: 2rem; margin-bottom: 1.5rem; }
+  .blog-content h2 { font-size: 1.75rem; margin-top: 2rem; }
+  .blog-content h3 { font-size: 1.375rem; }
+  .blog-content p { font-size: 1.0625rem; line-height: 1.75; }
+}
+
+@media (min-width: 1024px) {
+  .blog-content h1 { font-size: 2.25rem; }
+  .blog-content h2 { font-size: 1.875rem; }
+  .blog-content h3 { font-size: 1.5rem; }
+  .blog-content p { font-size: 1.125rem; }
+}
+
+.blog-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1.25rem; }
+.blog-content ol { list-style-type: decimal; margin-left: 1.5rem; margin-bottom: 1.25rem; }
+.blog-content li { margin-bottom: 0.5rem; font-size: inherit; }
+.blog-content blockquote { border-left: 4px solid #009D5C; padding-left: 1.25rem; font-style: italic; margin: 1.5rem 0; color: #4B5563; font-size: 1.125rem; }
+.blog-content img { border-radius: 0.75rem; margin: 1.5rem 0; width: 100%; height: auto; object-fit: cover; }
+.blog-content a { color: #009D5C; text-decoration: underline; font-weight: 500; }
+.blog-content strong { font-weight: 700; color: #111827; }
+

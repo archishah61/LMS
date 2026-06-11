@@ -1,0 +1,7 @@
+Course Title: Foundations of JavaScript Programming: A Comprehensive Quick Course
+
+=== Thumbnail Description ===
+A professional minimalist design featuring the JavaScript logo in gold on a deep navy background, surrounded by abstract representations of code blocks and connectivity nodes.
+
+=== Preview Video Description ===
+[0:00-0:10] Introduction to JavaScript's role in modern web architecture. [0:10-0:30] Overview of the curriculum including syntax, functions, and data structures. [0:30-0:45] Visual demonstration of code execution results. [0:45-0:55] Conclusion and invitation to enroll.

@@ -1,0 +1,7 @@
+Course Title: Node.js Fundamentals: Quick Start to Backend Development
+
+=== Thumbnail Description ===
+A vibrant, modern graphic illustrating Node.js concepts. Prominently features the Node.js logo (green hexagon) with stylized lines representing data flow and connectivity. Background elements include abstract server racks and code snippets, symbolizing backend development. The overall aesthetic is clean, technical, and inviting, with a focus on quick learning.
+
+=== Preview Video Description ===
+[0:00-0:10] Dynamic intro with Node.js logo animation and upbeat music. [0:10-0:25] Quick montage of key learning outcomes: code editor showing Node.js, server architecture diagrams, npm commands, Express.js routes. [0:25-0:40] Instructor briefly highlights course benefits, showing a friendly face. [0:40-0:50] Text overlay with 'Learn Node.js in Under 4 Hours!' and course highlights. [0:50-1:00] Call to action: 'Enroll Now!' with course title and URL.

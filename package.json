@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "pdfjs-dist": "^3.11.174",
+    "react-markdown": "^10.1.0"
+  }
+}
