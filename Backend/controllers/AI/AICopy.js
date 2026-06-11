@@ -52,8 +52,9 @@ const router = express.Router();
 // });
 
 const axios = require('axios');
+require('dotenv').config();
 
-const ELEVEN_API_KEY = 'sk_160b6d8d853e8f593937f9fd990ad078f71b7a848a2e3604';
+const ELEVEN_API_KEY = process.env.ELEVEN_LABS_API_KEY || 'your-elevenlabs-api-key-here';
 const VOICE_ID = '21m00Tcm4TlvDq8ikWAM'; // You can change this
 
 router.post('/text-to-speech', async (req, res) => {
