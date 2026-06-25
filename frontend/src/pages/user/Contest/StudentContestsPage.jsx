@@ -8,8 +8,6 @@ import { useGetActiveContestsQuery } from "../../../services/Contest/contestAPI"
 import { slugify } from "../../../utils/slugify"
 import { useGetUserAllEnrollmentQuery } from "../../../services/Contest/userContestAPI"
 import { getStudentToken } from "../../../services/CookieService"
-import { useGetFeatureStatusByNameQuery } from "../../../services/Masters/featureStatusAPI"
-import ComingSoonModal2 from "../../../components/modal/ComingSoonModal2"
 import PrimaryLoader from "../../../components/ui/PrimaryLoader"
 
 export default function StudentContestsPage() {
@@ -30,10 +28,7 @@ export default function StudentContestsPage() {
       { skip: !access_token }
     )
 
-  const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
-    useGetFeatureStatusByNameQuery(
-      { name: "contest" }
-    )
+
 
   const templates = templatesData?.success ? templatesData.data : []
   const contests = contestsData?.success ? contestsData.data : []
@@ -253,10 +248,7 @@ export default function StudentContestsPage() {
     return next ? formatDisplayTime(getTemplateTimeRemaining(next)) : "Schedule TBD"
   }
 
-  // Show coming soon page if feature is not active
-  if (featureData?.is_active === 0) {
-    return <ComingSoonModal2 featureData={featureData} />;
-  }
+
 
   if (templatesLoading || contestsLoading) {
     return (

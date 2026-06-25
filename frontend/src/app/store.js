@@ -42,8 +42,7 @@ import { userChallengeApi } from "../services/Challenge/userChallenge"; // Impor
 import { challengeCategoryApi } from "../services/Masters/challengeCategoryApi"; // Import the sectionApi
 import { partnerApi } from "../services/Become_partner/becomePartnerApi"; // Import the sectionApi
 import { partnerActiveApi } from "../services/Become_partner/isPartnerActiveAPI"; // Import the sectionApi
-import { featureStatusApi } from "../services/Masters/featureStatusAPI";
-import { featureInterestApi } from "../services/Support/featureInterestAPI";
+
 import { userChallengeQuestApi } from "../services/Challenge/userChallengeQuestAPI";
 import { userChallengePhaseApi } from "../services/Challenge/userChallengePhaseAPI";
 import { userChallengeTaskApi } from "../services/Challenge/userChallengeTaskAPI";
@@ -169,8 +168,7 @@ import userChallengeReducer from "../features/Challenge/uerChallenge";
 import challengeCatReducer from "../features/Masters/challengeCatSlice";
 import becomePartnerReducer from "../features/BecomePartner/becomePartnerSlice"; // Import the sectionSlice
 import partnerActiveReducer from "../features/BecomePartner/isPartnerActiveSlice"; // Import the sectionSlice
-import featureStatusReducer from "../features/Masters/featureStatusSlice"; // Import the sectionSlice
-import featureInterestReducer from "../features/Support/featureInterestSlice"; // Import the sectionSlice
+
 import userChallengeQuestReducer from "../features/Challenge/userChallengeQuestSlice";
 import userChallengePhaseReducer from "../features/Challenge/userChallengePhaseSlice";
 import userChallengeTaskReducer from "../features/Challenge/userChallengeTaskSlice";
@@ -291,8 +289,7 @@ export const store = configureStore({
     [challengeCategoryApi.reducerPath]: challengeCategoryApi.reducer, // Add sectionApi reducer
     [partnerApi.reducerPath]: partnerApi.reducer, // Add sectionApi reducer
     [partnerActiveApi.reducerPath]: partnerActiveApi.reducer, // Add sectionApi reducer
-    [featureStatusApi.reducerPath]: featureStatusApi.reducer,
-    [featureInterestApi.reducerPath]: featureInterestApi.reducer,
+
     [userChallengeQuestApi.reducerPath]: userChallengeQuestApi.reducer,
     [userChallengePhaseApi.reducerPath]: userChallengePhaseApi.reducer,
     [userChallengeTaskApi.reducerPath]: userChallengeTaskApi.reducer,
@@ -417,8 +414,7 @@ export const store = configureStore({
     challengeCategory: challengeCatReducer, // Add sectionSlice reducer
     becomePartner: becomePartnerReducer, // Add sectionSlice reducer
     partner_active: partnerActiveReducer, // Add sectionSlice reducer
-    featureStatus: featureStatusReducer,
-    featureInterest: featureInterestReducer,
+
     userChallengeQuest: userChallengeQuestReducer,
     userChallengePhase: userChallengePhaseReducer,
     userChallengeTask: userChallengeTaskReducer,
@@ -541,8 +537,7 @@ export const store = configureStore({
       aboutApi.middleware,
       partnerApi.middleware,
       partnerActiveApi.middleware,
-      featureStatusApi.middleware,
-      featureInterestApi.middleware,
+
       userChallengeQuestApi.middleware,
       userChallengePhaseApi.middleware,
       userChallengeTaskApi.middleware,

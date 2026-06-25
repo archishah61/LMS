@@ -105,8 +105,7 @@ export default function AdminSidebar() {
     "/admin/dashboard/subscribe": "services",
     "/admin/dashboard/reviews": "services",
     "/admin/dashboard/tiers": "services",
-    "/admin/dashboard/features": "services",
-    "/admin/dashboard/features/interested": "services",
+
     "/admin/dashboard/terms-of-service": "legalPages",
     "/admin/dashboard/privacy-policy": "legalPages",
     "/admin/dashboard/social-media": "legalPages",
@@ -1136,42 +1135,7 @@ export default function AdminSidebar() {
                           )}
                         </NavLink>
                       </PermissionWrapper>
-                      <PermissionWrapper section="Feature Status">
-                        <NavLink
-                          to="/admin/dashboard/features"
-                          end
-                          className={({ isActive }) =>
-                            getSubmenuLinkStyles(isActive)
-                          }
-                        >
-                          {({ isActive }) => (
-                            <>
-                              <Sparkles size={16} className={isActive ? "text-forestGreen" : "text-gray-400"} />
-                              <span className="font-medium">
-                                Features
-                              </span>
-                            </>
-                          )}
-                        </NavLink>
-                      </PermissionWrapper>
-                      <PermissionWrapper section="Feature Interest">
-                        <NavLink
-                          to="/admin/dashboard/features/interested"
-                          end
-                          className={({ isActive }) =>
-                            getSubmenuLinkStyles(isActive)
-                          }
-                        >
-                          {({ isActive }) => (
-                            <>
-                              <Sparkles size={16} className={isActive ? "text-forestGreen" : "text-gray-400"} />
-                              <span className="font-medium">
-                                Features Interested
-                              </span>
-                            </>
-                          )}
-                        </NavLink>
-                      </PermissionWrapper>
+
                     </div>
                   )}
                 </li>

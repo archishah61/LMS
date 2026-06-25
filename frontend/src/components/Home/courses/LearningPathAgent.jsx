@@ -66,14 +66,12 @@ import LearningPathHistory from './LearningPathHistory';
 import RoadmapPDFGenerator from "./RoadmapPDFGenerator"
 import { useNavigate } from "react-router-dom"
 import useStudentAuthTokenRefresh from "../../../hooks/useStudentAuthTokenRefresh"
-import { useGetFeatureStatusByNameQuery } from "../../../services/Masters/featureStatusAPI"
+
 import { useAuthModal } from '../../../context/AuthModalContext';
 import { useSelector } from 'react-redux';
 import { getStudentToken } from '../../../services/CookieService';
 import PrimaryLoader from "../../../components/ui/PrimaryLoader";
 
-// Import the new component
-import ComingSoonModal from "../../modal/ComingSoonModal"
 import UniversalRoadmapDisplay from "./UniversalRoadmapDisplay"
 import DefaultSEOMeta from "../../../context/DefaultSEOMeta";
 
@@ -746,53 +744,19 @@ const UniversalLearningPathAgent = () => {
     setCurrentFollowUpIndex(0)
   }
 
-  // Feature status query - no authentication required
-  const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
-    useGetFeatureStatusByNameQuery(
-      { name: "learning_path_ai" }
-    )
-
   useEffect(() => {
-    if (!access_token && Boolean(featureData?.is_active)) {
+    if (!access_token) {
       navigate("/");
       openLogin();
     }
-  }, [access_token, navigate, featureData, openLogin]);
+  }, [access_token, navigate, openLogin]);
 
   useEffect(() => {
-    if (isLoaded && !id && Boolean(featureData?.is_active)) {
+    if (isLoaded && !id) {
       navigate("/");
       openLogin();
     }
-  }, [isLoaded, id, navigate, featureData, openLogin]);
-
-  // Show coming soon page if feature is inactive - this check happens FIRST
-  if (featureData?.is_active === 0) {
-    return <ComingSoonModal featureData={featureData} />;
-  }
-
-  // Show loading state for feature data
-  if (featureDataLoading) {
-    return (
-      <div className="flex items-center justify-center min-h-screen bg-gray-50">
-        <div className="text-center">
-          <PrimaryLoader />
-        </div>
-      </div>
-    )
-  }
-
-  // Show error state for feature data
-  if (featureDataError) {
-    return (
-      <div className="text-red-500 text-center p-4 bg-red-50 min-h-screen flex items-center justify-center">
-        <div className="bg-white p-8 rounded-xl shadow-lg">
-          <h2 className="text-2xl font-bold mb-4">Oops! Something went wrong</h2>
-          <p>Error loading feature status: {featureDataError?.toString()}</p>
-        </div>
-      </div>
-    )
-  }
+  }, [isLoaded, id, navigate, openLogin]);
 
   // Enhanced StepIndicator Component
   const StepIndicator = () => {

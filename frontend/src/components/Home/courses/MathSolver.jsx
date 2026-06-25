@@ -3,8 +3,6 @@ import { Calculator, Palette, RotateCcw, Play, History, Trash2, Minus, Plus, Bru
 import { useSolveMathMutation, useGetUserMathSolverHistoryQuery } from "../../../services/AIServices";
 import { useNavigate } from "react-router-dom";
 import useStudentAuthTokenRefresh from '../../../hooks/useStudentAuthTokenRefresh';
-import { useGetFeatureStatusByNameQuery } from "../../../services/Masters/featureStatusAPI";
-import ComingSoonModal from '../../modal/ComingSoonModal';
 import { useAuthModal } from '../../../context/AuthModalContext';
 import { useSelector } from 'react-redux';
 import { getStudentToken } from '../../../services/CookieService';
@@ -251,23 +249,19 @@ const MathSolver = () => {
     const { access_token } = getStudentToken();
     const { id, isLoaded } = useSelector((state) => state.user);
 
-    // Feature status query
-    const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
-        useGetFeatureStatusByNameQuery({ name: "maths_solver" });
-
     useEffect(() => {
-        if (!access_token && Boolean(featureData?.is_active)) {
+        if (!access_token) {
             navigate("/");
             openLogin();
         }
-    }, [access_token, navigate, featureData, openLogin]);
+    }, [access_token, navigate, openLogin]);
 
     useEffect(() => {
-        if (isLoaded && !id && Boolean(featureData?.is_active)) {
+        if (isLoaded && !id) {
             navigate("/");
             openLogin();
         }
-    }, [isLoaded, id, navigate, featureData, openLogin]);
+    }, [isLoaded, id, navigate, openLogin]);
 
     const canvasRef = useRef(null);
     const fileInputRef = useRef(null);

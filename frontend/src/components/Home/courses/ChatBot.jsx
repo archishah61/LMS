@@ -20,7 +20,7 @@ import { Link } from "react-router-dom";
 import { useChatWithBotMutation } from "../../../services/AIServices";
 import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { useGetFeatureStatusByNameQuery } from "../../../services/Masters/featureStatusAPI";
+
 
 // Keyframe animations
 const fadeInScale = keyframes`
@@ -433,12 +433,6 @@ const TypingIndicator = styled.div`
 `;
 
 const ModernChatBot = () => {
-  // Feature status query - no authentication required
-  const { data: featureData, isLoading: featureDataLoading } =
-    useGetFeatureStatusByNameQuery(
-      { name: "chatbot_ai" }
-    )
-
   const [isOpen, setIsOpen] = useState(false);
 
   const [messages, setMessages] = useState(() => {
@@ -610,10 +604,7 @@ const ModernChatBot = () => {
     setSelectedFiles(prev => prev.filter((_, i) => i !== index));
   };
 
-  // Show nothing if feature is inactive or loading
-  if (featureDataLoading || featureData?.is_active === 0) {
-    return null;
-  }
+
 
   return (
     <ChatContainer>

@@ -115,8 +115,7 @@ import UserActivityLog from "./pages/admin/Activity/UserActivityLog.jsx";
 import TransactionsPage from "./pages/Student/TransactionsPage.jsx";
 import StudentProfileLayout from "./components/student/StudentProfileLayout.jsx";
 import SwaggerDocs from "./SwaggerDocs.jsx";
-import Features from "./pages/admin/Features/Feature.jsx";
-import FeatureInterested from "./pages/admin/Features/FeatureInterested.jsx";
+
 import Batches from "./pages/admin/Users/Batches.jsx";
 import BatchUsers from "./pages/admin/Users/BatchUsers.jsx";
 import CodeEditor from './components/CodeEditor.jsx';
@@ -642,14 +641,7 @@ const router = createBrowserRouter([
             path: "dashboard/tiers",
             element: <Tiers />,
           },
-          {
-            path: "dashboard/features",
-            element: <Features />,
-          },
-          {
-            path: "dashboard/features/interested",
-            element: <FeatureInterested />,
-          },
+
           {
             path: "dashboard/roles",
             element: <Role />,

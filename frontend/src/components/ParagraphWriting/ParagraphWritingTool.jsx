@@ -14,8 +14,6 @@ import {
     History, X, Star,
     Trash2
 } from 'lucide-react';
-import { useGetFeatureStatusByNameQuery } from "../../services/Masters/featureStatusAPI";
-import ComingSoonModal from "../modal/ComingSoonModal";
 import DefaultSEOMeta from '../../context/DefaultSEOMeta';
 
 
@@ -285,11 +283,7 @@ const HistoryDrawer = ({ onClose, history = [] }) => {
    MAIN COMPONENT
 ───────────────────────────────────────── */
 const ParagraphWritingTool = () => {
-    // Feature status query - no authentication required
-    const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
-        useGetFeatureStatusByNameQuery(
-            { name: "paragraph_ai" }
-        )
+
 
     const [stage, setStage] = useState('landing');
     const [difficulty, setDifficulty] = useState('');
@@ -547,33 +541,7 @@ const ParagraphWritingTool = () => {
     )
 
 
-    // Show coming soon page if feature is inactive - this check happens FIRST
-    if (featureData?.is_active === 0) {
-        return <ComingSoonModal featureData={featureData} />;
-    }
 
-    // Show loading state for feature data
-    if (featureDataLoading) {
-        return (
-            <div className="flex items-center justify-center min-h-screen bg-slate-50">
-                <div className="text-center">
-                    <PrimaryLoader />
-                </div>
-            </div>
-        )
-    }
-
-    // Show error state for feature data
-    if (featureDataError) {
-        return (
-            <div className="text-red-500 text-center p-4 bg-red-50 min-h-screen flex items-center justify-center">
-                <div className="bg-white p-8 rounded-xl shadow-lg">
-                    <h2 className="text-2xl font-bold mb-4">Oops! Something went wrong</h2>
-                    <p>Error loading feature status: {featureDataError?.toString()}</p>
-                </div>
-            </div>
-        )
-    }
 
     /* ══════════════════════════════════
        STAGE: LANDING
