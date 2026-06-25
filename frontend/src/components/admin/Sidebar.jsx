@@ -429,7 +429,7 @@ export default function AdminSidebar() {
               </PermissionWrapper>
 
               {/* ... Rest of the navigation items remain the same ... */}
-              <PermissionWrapper section="Predefined Questions|Course Category|Cheat Sheet">
+              <PermissionWrapper section="Course Category">
                 {/* Divider */}
                 <hr className={`my-3 border-gray-200 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-50"}`} />
                 {/* Content Management Dropdown */}
@@ -460,7 +460,7 @@ export default function AdminSidebar() {
                       id="content-management-submenu"
                       className="ml-3 mt-1 space-y-1 animate-[fadeIn_0.2s_ease-in-out]"
                     >
-                      <PermissionWrapper section="Predefined Questions">
+                      {/* <PermissionWrapper section="Predefined Questions">
                         <NavLink
                           to="/admin/dashboard/predefined-questions"
                           className={({ isActive }) =>
@@ -477,7 +477,7 @@ export default function AdminSidebar() {
                             </>
                           )}
                         </NavLink>
-                      </PermissionWrapper>
+                      </PermissionWrapper> */}
                       <PermissionWrapper section="Course Category">
                         <NavLink
                           to="/admin/dashboard/course-category-master"
@@ -495,7 +495,7 @@ export default function AdminSidebar() {
                           )}
                         </NavLink>
                       </PermissionWrapper>
-                      <PermissionWrapper section="Cheat Sheet">
+                      {/* <PermissionWrapper section="Cheat Sheet">
                         <NavLink
                           to="/admin/dashboard/cheat-sheets"
                           className={({ isActive }) =>
@@ -509,7 +509,7 @@ export default function AdminSidebar() {
                             </>
                           )}
                         </NavLink>
-                      </PermissionWrapper>
+                      </PermissionWrapper> */}
                     </div>
                   )}
                 </li>
@@ -808,11 +808,11 @@ export default function AdminSidebar() {
               </PermissionWrapper>
 
               {/* Landing Page Management Dropdown */}
-              <PermissionWrapper section="Landing Page FAQ | Landing Page Statistics | Landing Page Features | Landing Page Testimonials">
+              {/* <PermissionWrapper section="Landing Page FAQ | Landing Page Statistics | Landing Page Features | Landing Page Testimonials"> */}
                 {/* Divider */}
-                <hr className={`my-3 border-gray-200 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-50"}`} />
+                {/* <hr className={`my-3 border-gray-200 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-50"}`} /> */}
 
-                <li>
+                {/* <li>
                   <button
                     onClick={() => toggleDropdown("landing_page")}
                     className={getDropdownStyles(openDropdown === "landing_page")}
@@ -927,8 +927,8 @@ export default function AdminSidebar() {
                       </PermissionWrapper>
                     </div>
                   )}
-                </li>
-              </PermissionWrapper>
+                </li> */}
+              {/* </PermissionWrapper> */}
 
               <PermissionWrapper section="AI Interview Settings">
                 {/* Divider */}
