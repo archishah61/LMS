@@ -7,6 +7,7 @@ import { getTokens, isTokenExpired, getTokenExpiry, storeToken, removeToken, ref
 import { jwtDecode } from "jwt-decode";
 import { setUserToken, unSetUserToken } from "../../../features/authSlice";
 import { setUserInfo, unsetUserInfo } from "../../../features/userSlice";
+import StudentSidebar from "../../student/studentSidebar";
 import Navbar from "../../navbar/navbar";
 import Footer from "../../Footer/Footer";
 import ChatBot from "../../Home/courses/ChatBot";
