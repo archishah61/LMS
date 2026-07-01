@@ -39,13 +39,13 @@ const questionTypes = [
     color: "from-gray-500 to-gray-600",
     description: "View all question types",
   },
-  {
-    id: "predefined",
-    label: "Predefined Questions",
-    color: "from-cyan-500 to-cyan-600",
-    description: "Select from existing predefined questions",
-    isPredefined: true, // Add this flag to identify predefined type
-  },
+  // {
+  //   id: "predefined",
+  //   label: "Predefined Questions",
+  //   color: "from-cyan-500 to-cyan-600",
+  //   description: "Select from existing predefined questions",
+  //   isPredefined: true, // Add this flag to identify predefined type
+  // },
   {
     id: "mcq",
     label: "Multiple Choice",
