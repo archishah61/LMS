@@ -10,6 +10,7 @@ import { useGetPaymentByUserIdQuery } from "../../services/Enrollment/enrollAPI"
 import { getStudentToken } from "../../services/CookieService"
 import { slugify } from "../../utils/slugify"
 import { useGetPaidCheatSheetsQuery } from "../../services/CheatSheet/cheatSheetApi"
+import { useGetFeatureStatusByNameQuery } from "../../services/Masters/featureStatusAPI"
 import { jwtDecode } from "jwt-decode"
 import PrimaryLoader from "../../components/ui/PrimaryLoader"
 
@@ -28,7 +29,14 @@ function UserPurchase() {
     }
   }
 
-
+  // Fetch feature status for cheatsheet
+  const {
+    data: featureData,
+    isLoading: featureDataLoading,
+    error: featureDataError
+  } = useGetFeatureStatusByNameQuery(
+    { name: "cheatsheet" }
+  )
 
   // Fetch course purchase data using the API query
   const {
@@ -43,7 +51,7 @@ function UserPurchase() {
     },
   )
 
-  // Fetch cheatsheet purchase data
+  // Fetch cheatsheet purchase data - only if feature is active
   const {
     data: purchasedCheatSheets,
     isLoading: isCheatSheetsLoading,
@@ -53,14 +61,14 @@ function UserPurchase() {
   } = useGetPaidCheatSheetsQuery(
     { access_token },
     {
-      skip: !access_token,
+      skip: !access_token || featureData?.is_active === 0, // Skip if feature is inactive
     },
   )
 
-  const isLoading = isCoursesLoading && isCheatSheetsLoading
+  const isLoading = isCoursesLoading && isCheatSheetsLoading && featureDataLoading
 
-  // Check if cheatsheet feature is active (always active now)
-  const isCheatSheetActive = true
+  // Check if cheatsheet feature is active
+  const isCheatSheetActive = featureData?.is_active !== 0
 
   // Format course purchase data for display
   const coursePurchaseHistory = purchaseData && !isCoursesError
@@ -142,7 +150,7 @@ function UserPurchase() {
     : []
 
   // Loading state
-  const isPageLoading = isCoursesLoading || isCheatSheetsLoading
+  const isPageLoading = isCoursesLoading || isCheatSheetsLoading || featureDataLoading
 
   // Combine and sort all purchases by date (newest first)
   const allPurchaseHistory = [...coursePurchaseHistory, ...cheatsheetPurchaseHistory].sort(
@@ -157,6 +165,7 @@ function UserPurchase() {
   const hasRealError = () => {
     if (isCoursesError && coursesError?.status !== 404) return true
     if (isCheatSheetsError && cheatSheetsError?.status !== 404) return true
+    if (featureDataError) return true
     return false
   }
 

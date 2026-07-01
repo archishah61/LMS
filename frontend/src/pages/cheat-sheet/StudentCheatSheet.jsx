@@ -10,6 +10,8 @@ import RazorpayButton from "../../components/razorpay/RazorpayButton";
 import { usePayCheatSheetMutation } from "../../services/CheatSheet/cheatSheetApi";
 import toast from "react-hot-toast";
 import SupportModal from "../../components/modal/SupportModal";
+import { useGetFeatureStatusByNameQuery } from "../../services/Masters/featureStatusAPI";
+import ComingSoonModal2 from "../../components/modal/ComingSoonModal2";
 import PrimaryLoader from "../../components/ui/PrimaryLoader";
 
 export default function StudentCheatSheet() {
@@ -64,7 +66,10 @@ function StudentCheatSheetContent() {
     }
   );
 
-
+  const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
+    useGetFeatureStatusByNameQuery(
+      { name: "cheatsheet" }
+    );
 
   const formatPrice = (price) => {
     const numPrice = Number(price);
@@ -144,12 +149,14 @@ function StudentCheatSheetContent() {
   // Show coming soon page if feature is inactive
 
   // Show coming soon page if feature is inactive
-
+  if (featureData?.is_active === 0) {
+    return <ComingSoonModal2 featureData={featureData} />;
+  }
 
   // Show loading state
   // Show loading state - Only on initial load or if we have no data and are loading
   // This prevents the "jerk" effect on search
-  const isInitialLoad = (isLoading || isPurchasedLoading) && !cheatSheets.length;
+  const isInitialLoad = (isLoading || isPurchasedLoading || featureDataLoading) && !cheatSheets.length;
 
   if (isInitialLoad)
     return (
@@ -159,12 +166,12 @@ function StudentCheatSheetContent() {
     );
 
   // Show error state
-  if (error)
+  if (error || featureDataError)
     return (
       <div className="text-red-500 text-center p-4 bg-red-50 min-h-screen flex items-center justify-center">
         <div className="bg-white p-8 rounded-xl shadow-lg">
           <h2 className="text-2xl font-bold mb-4">Oops! Something went wrong</h2>
-          <p>Error loading cheat sheets: {error?.toString()}</p>
+          <p>Error loading cheat sheets: {error?.toString() || featureDataError?.toString()}</p>
         </div>
       </div>
     );

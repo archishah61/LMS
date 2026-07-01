@@ -2,9 +2,9 @@ const FooterSetting = require("../models/legalPages/footerSetting");
 const SocialMedia = require("../models/legalPages/socialMedia"); // Adjust path as per your structure
 
 const defaultFooterSetting = {
-    address: "ABCD, 123 Main Street, City, State, ZIP",
-    phone: "+91 1234567890",
-    email: "archishah0705@gmail.com",
+    address: "720 Zion Z1, near Times Square 2, off Sindhu Bhavan Marg, Bodakdev, Ahmedabad, Gujarat 380054",
+    phone: "+91 9033055100",
+    email: "excelsiortechnologies@gmail.com",
     timing: "Mon - Fri: 9:00 AM to 6:00 PM",
     logo: "uploads/footer/footer-logo.png", // You can leave this null if no default logo
     createdBy: 1,

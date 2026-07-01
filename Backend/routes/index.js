@@ -137,7 +137,9 @@ const countryRoutes = require('./masters/countryRoutes');
 const stateRoutes = require('./masters/stateRoutes');
 const cityRoutes = require('./masters/cityRoutes');
 
-
+// Feature
+const featureStatusRoutes = require('./masters/featureStatusRoutes');
+const featureInterestRoutes = require('./support/featureInterestRoutes');
 
 // Roles And Permission
 
@@ -295,7 +297,9 @@ router.use("/blogs", blogRoutes);
 router.use("/contacts", contactRoutes);
 router.use("/about", aboutRoute);
 
-
+// Featuer Status
+router.use("/feature", featureStatusRoutes);
+router.use("/feature-interest", featureInterestRoutes);
 
 // PayPal Routes
 

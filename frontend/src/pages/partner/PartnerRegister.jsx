@@ -28,6 +28,8 @@ import { useGetPrivacyPolicyByCategoryQuery } from "../../services/LegalPages/pr
 import { useGetPartnerStatusByIdQuery } from "../../services/Become_partner/isPartnerActiveAPI"
 import SupportModal from "../../components/modal/SupportModal"
 import FeatureInterestModal from "../../components/modal/FeatureInterestModal"
+import { useGetFeatureStatusByNameQuery } from "../../services/Masters/featureStatusAPI"
+import ComingSoonModal2 from "../../components/modal/ComingSoonModal2"; // Import the reusable component
 import PrimaryLoader from "../../components/ui/PrimaryLoader";
 
 export default function PartnerRegister() {
@@ -36,7 +38,14 @@ export default function PartnerRegister() {
   const { id: userId } = useSelector((state) => state.user)
   const navigate = useNavigate()
 
-
+  // Feature status query - check if partner feature is active
+  const {
+    data: featureData,
+    isLoading: featureDataLoading,
+    error: featureDataError
+  } = useGetFeatureStatusByNameQuery(
+    { name: "become_a_partner" }
+  )
 
   const { data: partnerFeatureStatus, isLoading: statusLoading, isError: statusError } = useGetPartnerStatusByIdQuery({
     id: 1,
@@ -330,7 +339,27 @@ export default function PartnerRegister() {
     )
   }
 
+  // Show coming soon page if feature is inactive - this check happens FIRST
+  if (featureData?.is_active === 0) {
+    return <ComingSoonModal2 featureData={featureData} />;
+  }
 
+  // Show loading state for feature status
+  if (featureDataLoading) {
+    return <PrimaryLoader />;
+  }
+
+  // Show error state for feature status
+  if (featureDataError) {
+    return (
+      <div className="text-red-500 text-center p-4 bg-red-50 min-h-screen flex items-center justify-center">
+        <div className="bg-white p-8 rounded-xl shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">Oops! Something went wrong</h2>
+          <p>Error loading partner registration: {featureDataError?.toString()}</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen text-gray-900 py-4 xs:py-6 sm:py-8 lg:py-6">

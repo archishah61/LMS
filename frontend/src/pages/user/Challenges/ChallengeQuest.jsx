@@ -43,6 +43,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { toast } from "react-hot-toast"
 import { getStudentToken } from "../../../services/CookieService"
 import { slugify } from "../../../utils/slugify"
+import { useGetFeatureStatusByNameQuery } from "../../../services/Masters/featureStatusAPI"
+import ComingSoonModal2 from "../../../components/modal/ComingSoonModal2"
 import PrimaryLoader from "../../../components/ui/PrimaryLoader"
 
 export default function ChallengeQuest() {
@@ -59,7 +61,9 @@ export default function ChallengeQuest() {
     { id: "completed", label: "Completed" }
   ]
 
-
+  // Feature status query
+  const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
+    useGetFeatureStatusByNameQuery({ name: "challenge_quest" })
 
   // Other data queries
   const { data: challenges, isLoading } = useGetAllChallengeQuestsQuery()
@@ -337,15 +341,29 @@ export default function ChallengeQuest() {
     navigate("/my-challenges")
   }
 
+  // Show coming soon page if feature is not active
+  if (featureData?.is_active === 0) {
+    return <ComingSoonModal2 featureData={featureData} />
+  }
+
   // Show loading state
-  if (isLoading)
+  if (isLoading || featureDataLoading)
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-50">
         <PrimaryLoader />
       </div>
     )
 
-
+  // Show error state for feature data
+  if (featureDataError)
+    return (
+      <div className="text-red-500 text-center p-4 bg-red-50 min-h-screen flex items-center justify-center">
+        <div className="bg-white p-8 rounded-xl shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">Oops! Something went wrong</h2>
+          <p>Error loading feature status: {featureDataError?.toString()}</p>
+        </div>
+      </div>
+    )
 
   return (
     <div className="min-h-screen bg-white">

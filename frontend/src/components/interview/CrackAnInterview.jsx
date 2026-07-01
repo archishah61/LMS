@@ -22,6 +22,8 @@ import RenderStartScreen from "./renderStartScreen";
 import renderInstructionsScreen from "./renderInstructionsScreen";
 import useStudentAuthTokenRefresh from "../../hooks/useStudentAuthTokenRefresh";
 import { Loader2 } from "lucide-react";
+import { useGetFeatureStatusByNameQuery } from "../../services/Masters/featureStatusAPI";
+import ComingSoonModal from "../modal/ComingSoonModal";
 import { toast } from "react-hot-toast";
 import PrimaryLoader from "../../components/ui/PrimaryLoader";
 
@@ -33,7 +35,11 @@ export default function CrackAnInterview() {
   const navigate = useNavigate();
   useStudentAuthTokenRefresh();
 
-
+  // Feature status query - no authentication required
+  const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
+    useGetFeatureStatusByNameQuery(
+      { name: "interview_ai" }
+    )
 
   const { access_token } = getStudentToken();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -94,13 +100,13 @@ export default function CrackAnInterview() {
 
   const { openLogin } = useAuthModal();
 
-  // Redirect to login if not logged in
+  // Redirect to login if not logged in (only if feature is active)
   useEffect(() => {
-    if (!access_token) {
+    if (!access_token && Boolean(featureData?.is_active)) {
       navigate("/");
       openLogin();
     }
-  }, [access_token, navigate, openLogin]);
+  }, [access_token, navigate, featureData, openLogin]);
 
   // if (!access_token) return null;
 
@@ -144,11 +150,11 @@ export default function CrackAnInterview() {
   const { id, isLoaded } = useSelector((state) => state.user);
 
   useEffect(() => {
-    if (isLoaded && !id) {
+    if (isLoaded && !id && Boolean(featureData?.is_active)) {
       navigate("/");
       openLogin();
     }
-  }, [isLoaded, id, navigate, openLogin]);
+  }, [isLoaded, id, navigate, featureData, openLogin]);
 
   // Helper function to download a blob as a file
   function downloadBlob(blob, filename) {
@@ -624,7 +630,33 @@ export default function CrackAnInterview() {
     }
   }, [interviewQuestions, evaluation, roleInput, categoryInput, access_token, createCompleteEvaluation]);
 
+  // Show coming soon page if feature is inactive - this check happens FIRST
+  if (featureData?.is_active === 0) {
+    return <ComingSoonModal featureData={featureData} />;
+  }
 
+  // Show loading state for feature data
+  if (featureDataLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-slate-50">
+        <div className="text-center">
+          <PrimaryLoader />
+        </div>
+      </div>
+    )
+  }
+
+  // Show error state for feature data
+  if (featureDataError) {
+    return (
+      <div className="text-red-500 text-center p-4 bg-red-50 min-h-screen flex items-center justify-center">
+        <div className="bg-white p-8 rounded-xl shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">Oops! Something went wrong</h2>
+          <p>Error loading feature status: {featureDataError?.toString()}</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div>

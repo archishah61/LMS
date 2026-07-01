@@ -37,6 +37,8 @@ import {
 import { motion, AnimatePresence } from "framer-motion"
 import { getStudentToken } from "../../../services/CookieService"
 import { slugify } from "../../../utils/slugify"
+import { useGetFeatureStatusByNameQuery } from "../../../services/Masters/featureStatusAPI"
+import ComingSoonModal2 from "../../../components/modal/ComingSoonModal2"
 import PrimaryLoader from "../../../components/ui/PrimaryLoader"
 
 export default function MyChallenges() {
@@ -46,7 +48,11 @@ export default function MyChallenges() {
   const [accessToken, setAccessToken] = useState(null)
   const [tokenLoading, setTokenLoading] = useState(true)
 
-
+  // Add feature status query
+  const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
+    useGetFeatureStatusByNameQuery(
+      { name: "challenge_quest" }
+    )
 
   // Initialize token
   useEffect(() => {
@@ -118,7 +124,10 @@ export default function MyChallenges() {
     setFilteredChallenges(result)
   }, [userChallenges?.data, searchQuery, statusFilter])
 
-
+  // Show coming soon page if feature is not active
+  if (!featureDataLoading && featureData?.is_active === 0) {
+    return <ComingSoonModal2 featureData={featureData} />;
+  }
 
   const getDifficultyColor = (level) => {
     switch (level?.toLowerCase()) {

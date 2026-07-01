@@ -15,6 +15,8 @@ import RazorpayButton from "../../components/razorpay/RazorpayButton"
 import toast from "react-hot-toast"
 import { useLazyGetCourseGenerationHistoryByIdQuery, useGetUserCourseGenerationHistoryQuery } from "../../services/Tier/courseGenerationHistoryAPI"
 import useStudentAuthTokenRefresh from "../../hooks/useStudentAuthTokenRefresh"
+import { useGetFeatureStatusByNameQuery } from "../../services/Masters/featureStatusAPI"
+import ComingSoonModal from "../../components/modal/ComingSoonModal"
 import { useAuthModal } from "../../context/AuthModalContext"
 import { slugify } from "../../utils/slugify"
 import DefaultSEOMeta from "../../context/DefaultSEOMeta"
@@ -2475,23 +2477,54 @@ export default function CourseGenerator() {
     setNotificationIds(new Set())
   }
 
-
+  // Feature status query
+  const { data: featureData, isLoading: featureDataLoading, error: featureDataError } =
+    useGetFeatureStatusByNameQuery(
+      { name: "do_your_own_course_ai" }
+    );
 
   useEffect(() => {
-    if (!access_token) {
+    if (!access_token && Boolean(featureData?.is_active)) {
       navigate("/");
       openLogin();
     }
-  }, [access_token, navigate, openLogin]);
+  }, [access_token, navigate, featureData, openLogin]);
 
   useEffect(() => {
-    if (isLoaded && !userId) {
+    if (isLoaded && !userId && Boolean(featureData?.is_active)) {
       navigate("/");
       openLogin();
     }
-  }, [isLoaded, userId, navigate, openLogin]);
+  }, [isLoaded, userId, navigate, featureData, openLogin]);
 
+  // Show coming soon page if feature is inactive
+  if (featureData?.is_active === 0) {
+    return <ComingSoonModal featureData={featureData} />;
+  }
 
+  // Show loading state for feature data
+  if (featureDataLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-50">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 animate-spin text-green-600 mx-auto mb-4" />
+          <p className="text-gray-600">Loading Course Generator...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Show error state for feature data
+  if (featureDataError) {
+    return (
+      <div className="text-red-500 text-center p-4 bg-red-50 min-h-screen flex items-center justify-center">
+        <div className="bg-white p-8 rounded-xl shadow-lg">
+          <h2 className="text-2xl font-bold mb-4">Oops! Something went wrong</h2>
+          <p>Error loading feature status: {featureDataError?.toString()}</p>
+        </div>
+      </div>
+    );
+  }
 
 
   return (
