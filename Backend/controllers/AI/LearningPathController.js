@@ -723,7 +723,7 @@ const getDefaultRoadmapTemplate = () => {
             </div>
             
             <div class="header" style="border-top:1px solid #eee; border-bottom:none; margin-top:30px; padding-top:20px;">
-                <p style="margin:0 auto; color:#6b7280; font-size:10px; font-weight:400;">Excel with Learnify• Your Journey Begins Now</p>
+                <p style="margin:0 auto; color:#6b7280; font-size:10px; font-weight:400;">Excel with Learnify • Your Journey Begins Now</p>
             </div>
         </body>
         </html>

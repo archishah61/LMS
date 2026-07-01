@@ -23,7 +23,7 @@ exports.createSubscribe = async (req, res, next) => {
         try {
             await sendMail(
                 email,
-                'Welcome to LearnifyNewsletter!',
+                'Welcome to Learnify Newsletter!',
                 'Thank you for subscribing to Queekies.',
                 `<h2>Thank you for subscribing!</h2>
                 <p>You’ll now receive updates from Queekies.</p>
