@@ -362,6 +362,7 @@ const Navbar = () => {
                   id="ai-tools-dropdown"
                   title="Quick Tools"
                   items={[
+                    { label: "Cheat Sheets", path: "/cheat-sheets", icon: FileText },
                     { label: "Crack an Interview", path: "/ai/crack-an-interview", icon: Briefcase, onClick: handleProtectedLinkClick },
                     { label: "Paragraph Writing Tool", path: "/ai/paragraph-typing", icon: PenTool, onClick: handleProtectedLinkClick },
                     { label: "Maths Solver", path: "/ai/maths-solver", icon: Calculator, onClick: handleProtectedLinkClick },
@@ -676,6 +677,13 @@ const Navbar = () => {
                 </div>
                 {openSection === 'ai' && (
                   <div className="pl-6">
+                    <Link
+                      to="/cheat-sheets"
+                      className="block px-3 py-2 text-sm text-gray-700"
+                      onClick={handleMobileLinkClick}
+                    >
+                      Cheat Sheets
+                    </Link>
                     <Link
                       to="/ai/crack-an-interview"
                       className="block px-3 py-2 text-sm text-gray-700"
