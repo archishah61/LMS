@@ -66,16 +66,16 @@ import topicData from './CourseManagement/topicData';
 const mainData = {
   introduction: {
     title: "Introduction",
-    subtitle: "Embark on Your Journey with the Queekies E-Learning API",
+    subtitle: "Embark on Your Journey with the LearnifyE-Learning API",
     sections: [
       {
-        title: "Welcome to the Queekies E-Learning Platform",
+        title: "Welcome to the LearnifyE-Learning Platform",
         content:
-          "We are thrilled to welcome you to the Queekies E-Learning Platform, where innovation meets education. Our platform is designed to transform the landscape of online learning by offering a seamless, interactive, and comprehensive educational experience. Whether you are an educator looking to inspire, a developer aiming to integrate, or an administrator seeking to oversee, our platform provides the tools and flexibility to enhance the digital learning journey. With our robust suite of APIs, we empower you to create, manage, and analyze educational content with unparalleled ease and efficiency.",
+          "We are thrilled to welcome you to the LearnifyE-Learning Platform, where innovation meets education. Our platform is designed to transform the landscape of online learning by offering a seamless, interactive, and comprehensive educational experience. Whether you are an educator looking to inspire, a developer aiming to integrate, or an administrator seeking to oversee, our platform provides the tools and flexibility to enhance the digital learning journey. With our robust suite of APIs, we empower you to create, manage, and analyze educational content with unparalleled ease and efficiency.",
       },
       {
-        title: "Discover the Queekies Platform",
-        content: "The Queekies platform is built on the principles of scalability and adaptability, featuring three core components that work in harmony to deliver an exceptional learning experience:",
+        title: "Discover the LearnifyPlatform",
+        content: "The Learnifyplatform is built on the principles of scalability and adaptability, featuring three core components that work in harmony to deliver an exceptional learning experience:",
         list: [
           {
             title: "Backend API",
@@ -93,7 +93,7 @@ const mainData = {
       },
       {
         title: "Our Commitment",
-        content: "At Queekies E-Learning, we are committed to providing a platform that not only meets but exceeds the expectations of our users. We continuously strive to innovate and improve, ensuring that our platform remains at the forefront of the digital education revolution. Join us on this exciting journey and experience the future of online learning."
+        content: "At LearnifyE-Learning, we are committed to providing a platform that not only meets but exceeds the expectations of our users. We continuously strive to innovate and improve, ensuring that our platform remains at the forefront of the digital education revolution. Join us on this exciting journey and experience the future of online learning."
       }
     ],
     icon: "🎓",

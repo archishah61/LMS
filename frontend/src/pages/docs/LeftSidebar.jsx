@@ -95,7 +95,7 @@ export default function LeftSidebar({ setSelectedEndpoint, selectedEndpoint }) {
             API Reference
           </h2>
         </div>
-        <p className="text-xs text-gray-500 mt-1 ml-1">Queekies E-Learning Platform</p>
+        <p className="text-xs text-gray-500 mt-1 ml-1">LearnifyE-Learning Platform</p>
       </div>
 
       {/* Search with improved styling */}

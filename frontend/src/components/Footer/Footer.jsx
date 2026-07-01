@@ -189,7 +189,7 @@ const Footer = () => {
                 </div>
 
                 <p className="text-gray-300 text-xs xs:text-sm sm:text-sm leading-relaxed text-wrap max-w-sm xs:max-w-md sm:max-w-lg lg:max-w-none">
-                  Queekies helps learners gain practical, job-ready skills through structured learning and hands-on projects.
+                  Learnifyhelps learners gain practical, job-ready skills through structured learning and hands-on projects.
                 </p>
 
                 <div className="space-y-3 w-full flex flex-col items-center lg:items-start">

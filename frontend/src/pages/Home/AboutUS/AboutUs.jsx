@@ -46,19 +46,19 @@ const AboutUs = () => {
     // Sample testimonials data
     const testimonials = [
         {
-            quote: "Queekies transformed my learning experience completely. The interactive courses and personalized learning paths helped me master skills I struggled with for years. The community of learners and instructors is incredibly supportive.",
+            quote: "Learnifytransformed my learning experience completely. The interactive courses and personalized learning paths helped me master skills I struggled with for years. The community of learners and instructors is incredibly supportive.",
             name: "Emily Rodriguez",
             role: "Data Science Student",
             image: "/assets/testimonial2.jpeg"
         },
         {
-            quote: "As someone who struggled with traditional education, Queekies was a game-changer. The flexibility to learn at my own pace combined with the engaging content made learning enjoyable again. I've completed three certifications already!",
+            quote: "As someone who struggled with traditional education, Learnifywas a game-changer. The flexibility to learn at my own pace combined with the engaging content made learning enjoyable again. I've completed three certifications already!",
             name: "Michael Chen",
             role: "Web Development Student",
             image: "/assets/testimonial3.jpg"
         },
         {
-            quote: "The personalized feedback from instructors is what sets Queekies apart. Every time I submitted a project, I received detailed guidance on how to improve. This level of attention has accelerated my growth tremendously.",
+            quote: "The personalized feedback from instructors is what sets Learnifyapart. Every time I submitted a project, I received detailed guidance on how to improve. This level of attention has accelerated my growth tremendously.",
             name: "Sophia Williams",
             role: "UX Design Student",
             image: "/assets/testimonial1.jpeg"
@@ -301,7 +301,7 @@ const AboutUs = () => {
                                         <div className="flex-1">
                                             <h3 className="text-xs font-bold text-forestGreen mb-1">2015: The Beginning</h3>
                                             <p className="text-[10px] text-gray-600 leading-tight">
-                                                Founded with a vision to make education accessible to everyone, Queekies started as a small team
+                                                Founded with a vision to make education accessible to everyone, Learnifystarted as a small team
                                                 of educators and technologists passionate about transforming learning.
                                             </p>
                                         </div>
@@ -318,7 +318,7 @@ const AboutUs = () => {
                                             <h3 className="text-sm xs:text-base sm:text-lg md:text-xl font-bold ml-2 xs:ml-3 text-forestGreen">2015: The Beginning</h3>
                                         </div>
                                         <p className="text-gray-600 text-xs xs:text-sm leading-relaxed ml-0">
-                                            Founded with a vision to make education accessible to everyone, Queekies started as a small team
+                                            Founded with a vision to make education accessible to everyone, Learnifystarted as a small team
                                             of educators and technologists passionate about transforming learning.
                                         </p>
                                     </div>
@@ -329,7 +329,7 @@ const AboutUs = () => {
                                     <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
                                         <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-forestGreen">2015: The Beginning</h3>
                                         <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                                            Founded with a vision to make education accessible to everyone, Queekies started as a small team
+                                            Founded with a vision to make education accessible to everyone, Learnifystarted as a small team
                                             of educators and technologists passionate about transforming learning.
                                         </p>
                                     </div>
@@ -408,7 +408,7 @@ const AboutUs = () => {
                                         <div className="flex-1">
                                             <h3 className="text-xs font-bold text-forestGreen mb-1">2020: Global Reach</h3>
                                             <p className="text-[10px] text-gray-600 leading-tight">
-                                               When the world needed online learning more than ever, Queekies scaled to meet the demand, introducing AI-powered learning paths and personalized education for learners of all ages.
+                                               When the world needed online learning more than ever, Learnifyscaled to meet the demand, introducing AI-powered learning paths and personalized education for learners of all ages.
                                             </p>
                                         </div>
                                     </div>
@@ -424,7 +424,7 @@ const AboutUs = () => {
                                             <h3 className="text-sm xs:text-base sm:text-lg md:text-xl font-bold ml-2 xs:ml-3 text-forestGreen">2020: Global Reach</h3>
                                         </div>
                                         <p className="text-gray-600 text-xs xs:text-sm leading-relaxed ml-0">
-                                            When the world needed online learning more than ever, Queekies scaled to meet the demand, introducing AI-powered learning paths and personalized education for learners of all ages.
+                                            When the world needed online learning more than ever, Learnifyscaled to meet the demand, introducing AI-powered learning paths and personalized education for learners of all ages.
                                         </p>
                                     </div>
                                 </div>
@@ -434,7 +434,7 @@ const AboutUs = () => {
                                     <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
                                         <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-forestGreen">2020: Global Reach</h3>
                                         <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                                            When the world needed online learning more than ever, Queekies scaled to meet the demand, introducing AI-powered learning paths and personalized education for learners of all ages.
+                                            When the world needed online learning more than ever, Learnifyscaled to meet the demand, introducing AI-powered learning paths and personalized education for learners of all ages.
                                         </p>
                                     </div>
                                 </div>
@@ -459,7 +459,7 @@ const AboutUs = () => {
                                         <div className="flex-1">
                                             <h3 className="text-xs font-bold text-forestGreen mb-1">Today: Leading the Future</h3>
                                             <p className="text-[10px] text-gray-600 leading-tight">
-                                                Today, Queekies stands as a leader in educational technology, continuously innovating
+                                                Today, Learnifystands as a leader in educational technology, continuously innovating
                                                 to create more immersive, effective, and personalized learning experiences.
                                             </p>
                                         </div>
@@ -476,7 +476,7 @@ const AboutUs = () => {
                                             <h3 className="text-sm xs:text-base sm:text-lg md:text-xl font-bold ml-2 xs:ml-3 text-forestGreen">Today: Leading the Future</h3>
                                         </div>
                                         <p className="text-gray-600 text-xs sm:text-sm leading-relaxed ml-0">
-                                            Today, Queekies stands as a leader in educational technology, continuously innovating
+                                            Today, Learnifystands as a leader in educational technology, continuously innovating
                                             to create more immersive, effective, and personalized learning experiences.
                                         </p>
                                     </div>
@@ -492,7 +492,7 @@ const AboutUs = () => {
                                     <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg sm:rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300">
                                         <h3 className="text-base sm:text-lg md:text-xl font-bold mb-2 text-forestGreen">Today: Leading the Future</h3>
                                         <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                                            Today, Queekies stands as a leader in educational technology, continuously innovating
+                                            Today, Learnifystands as a leader in educational technology, continuously innovating
                                             to create more immersive, effective, and personalized learning experiences.
                                         </p>
                                     </div>
@@ -654,7 +654,7 @@ const AboutUs = () => {
                             <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4">What Our Students Say</h2>
                             <div className="w-16 sm:w-18 md:w-20 h-0.5 sm:h-1 bg-white rounded-full mb-3 sm:mb-4 mx-auto lg:mx-0"></div>
                             <p className="text-xs sm:text-sm md:text-base opacity-90 mb-4 sm:mb-5 md:mb-6 px-2 sm:px-4 md:px-0">
-                                Hear from our community of learners about how Queekies has transformed their educational experience.
+                                Hear from our community of learners about how Learnifyhas transformed their educational experience.
                             </p>
                         </div>
                         <div className="lg:w-1/2">

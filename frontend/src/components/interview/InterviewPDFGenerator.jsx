@@ -224,7 +224,7 @@ const InterviewPDFGenerator = ({ evaluation, role, category, date, fullDateTime,
 
         <div style="margin-bottom: 20px; display: flex; justify-content: space-between; color: #64748b; font-size: 10px; font-weight: 700; text-transform: uppercase;">
           <span>Attempted: ${fullDateTime || date}</span>
-          <span>Queekies Interview Coach</span>
+          <span>LearnifyInterview Coach</span>
         </div>
 
         <div class="section">
@@ -269,7 +269,7 @@ const InterviewPDFGenerator = ({ evaluation, role, category, date, fullDateTime,
         </div>
 
         <div class="footer">
-          <span>Queekies • Interactive Preparation Hub</span>
+          <span>Learnify• Interactive Preparation Hub</span>
           <span>Downloaded on: ${new Date().toLocaleString()}</span>
         </div>
       </body>
